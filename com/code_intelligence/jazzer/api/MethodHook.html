@@ -123,11 +123,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 @Repeatable(<a href="MethodHooks.html" title="annotation in com.code_intelligence.jazzer.api">MethodHooks.class</a>)
 @Documented
 public @interface <span class="memberNameLabel">MethodHook</span></pre>
-<div class="block">Registers this method as a hook that should run after the method
- specified by the annotation parameters has returned.
+<div class="block">Registers the annotated method as a hook that should run before, instead or
+ after the method specified by the annotation parameters.
  <p>
- This method will be called after every call to the target method and has
- access to its return value. The target method is specified by
+ Depending on <a href="#type()"><code>type()</code></a> this method will be called after, instead or
+ before every call to the target method and has
+ access to its parameters and return value. The target method is specified by
  <a href="#targetClassName()"><code>targetClassName()</code></a> and <a href="#targetMethod()"><code>targetMethod()</code></a>. In case of an
  overloaded method, <a href="#targetMethodDescriptor()"><code>targetMethodDescriptor()</code></a> can be used to restrict
  the application of the hook to a particular overload.
@@ -275,6 +276,13 @@ public @interface <span class="memberNameLabel">MethodHook</span></pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.lang.String[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#additionalClassesToHook()">additionalClassesToHook</a></span></code></th>
+<td class="colLast">
+<div class="block">Array of additional classes to hook.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#targetMethodDescriptor()">targetMethodDescriptor</a></span></code></th>
 <td class="colLast">
@@ -384,7 +392,7 @@ public @interface <span class="memberNameLabel">MethodHook</span></pre>
 <li class="blockList"><a id="targetMethodDescriptor()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>targetMethodDescriptor</h4>
 <pre>java.lang.String&nbsp;targetMethodDescriptor</pre>
@@ -404,6 +412,33 @@ public @interface <span class="memberNameLabel">MethodHook</span></pre>
 <dl>
 <dt>Default:</dt>
 <dd>""</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="additionalClassesToHook()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>additionalClassesToHook</h4>
+<pre>java.lang.String[]&nbsp;additionalClassesToHook</pre>
+<div class="block">Array of additional classes to hook.
+ <p>
+ Hooks are applied on call sites. This means that classes calling the one
+ defined in this annotation need to be instrumented to actually execute
+ the hook. This property can be used to hook normally ignored classes.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>fully qualified class names to hook</dd>
+</dl>
+<dl>
+<dt>Default:</dt>
+<dd>{}</dd>
 </dl>
 </li>
 </ul>
