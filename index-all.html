@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -111,6 +110,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/code_intelligence/jazzer/api/Consumer5.html#accept(T1,T2,T3,T4,T5)">accept(T1, T2, T3, T4, T5)</a></span> - Method in interface com.code_intelligence.jazzer.api.<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="interface in com.code_intelligence.jazzer.api">Consumer5</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/code_intelligence/jazzer/api/MethodHook.html#additionalClassesToHook()">additionalClassesToHook()</a></span> - Method in annotation type com.code_intelligence.jazzer.api.<a href="com/code_intelligence/jazzer/api/MethodHook.html" title="annotation in com.code_intelligence.jazzer.api">MethodHook</a></dt>
+<dd>
+<div class="block">Array of additional classes to hook.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/code_intelligence/jazzer/api/HookType.html#AFTER">AFTER</a></span> - com.code_intelligence.jazzer.api.<a href="com/code_intelligence/jazzer/api/HookType.html" title="enum in com.code_intelligence.jazzer.api">HookType</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/code_intelligence/jazzer/api/Function1.html#apply(T1)">apply(T1)</a></span> - Method in interface com.code_intelligence.jazzer.api.<a href="com/code_intelligence/jazzer/api/Function1.html" title="interface in com.code_intelligence.jazzer.api">Function1</a></dt>
@@ -529,8 +532,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><a href="com/code_intelligence/jazzer/api/MethodHook.html" title="annotation in com.code_intelligence.jazzer.api"><span class="typeNameLink">MethodHook</span></a> - Annotation Type in <a href="com/code_intelligence/jazzer/api/package-summary.html">com.code_intelligence.jazzer.api</a></dt>
 <dd>
-<div class="block">Registers this method as a hook that should run after the method
- specified by the annotation parameters has returned.</div>
+<div class="block">Registers the annotated method as a hook that should run before, instead or
+ after the method specified by the annotation parameters.</div>
 </dd>
 <dt><a href="com/code_intelligence/jazzer/api/MethodHooks.html" title="annotation in com.code_intelligence.jazzer.api"><span class="typeNameLink">MethodHooks</span></a> - Annotation Type in <a href="com/code_intelligence/jazzer/api/package-summary.html">com.code_intelligence.jazzer.api</a></dt>
 <dd>
