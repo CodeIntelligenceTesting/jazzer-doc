@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -92,13 +92,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -143,6 +143,32 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SEED">SEED</a></span></code></th>
+<td class="colLast">
+<div class="block">A 32-bit random number that hooks can use to make pseudo-random choices
+ between multiple possible mutations they could guide the fuzzer towards.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ========== METHOD SUMMARY =========== -->
 <section role="region">
 <ul class="blockList">
@@ -258,6 +284,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#exploreState(byte,int)">exploreState</a></span>&#8203;(byte&nbsp;state,
+            int&nbsp;id)</code></th>
+<td class="colLast">
+<div class="block">Instructs the fuzzer to attain as many possible values for the absolute value of <code>state</code>
+ as possible.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#guideTowardsContainment(java.lang.String,java.lang.String,int)">guideTowardsContainment</a></span>&#8203;(java.lang.String&nbsp;haystack,
                        java.lang.String&nbsp;needle,
                        int&nbsp;id)</code></th>
@@ -266,7 +301,7 @@ extends java.lang.Object</pre>
  needle</code> as a substring.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#guideTowardsEquality(byte%5B%5D,byte%5B%5D,int)">guideTowardsEquality</a></span>&#8203;(byte[]&nbsp;current,
                     byte[]&nbsp;target,
@@ -276,7 +311,7 @@ extends java.lang.Object</pre>
  target</code>.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#guideTowardsEquality(java.lang.String,java.lang.String,int)">guideTowardsEquality</a></span>&#8203;(java.lang.String&nbsp;current,
                     java.lang.String&nbsp;target,
@@ -286,7 +321,7 @@ extends java.lang.Object</pre>
  target</code>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportFindingFromHook(java.lang.Throwable)">reportFindingFromHook</a></span>&#8203;(java.lang.Throwable&nbsp;finding)</code></th>
 <td class="colLast">
@@ -310,6 +345,34 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="SEED">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SEED</h4>
+<pre>public static final&nbsp;int SEED</pre>
+<div class="block">A 32-bit random number that hooks can use to make pseudo-random choices
+ between multiple possible mutations they could guide the fuzzer towards.
+ Hooks <b>must not</b> base the decision whether or not to report a finding
+ on this number as this will make findings non-reproducible.
+
+ This is the same number that libFuzzer uses as a seed internally, which
+ makes it possible to deterministically reproduce a previous fuzzing run by
+ supplying the seed value printed by libFuzzer as the value of the
+ <code>-seed</code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ============ METHOD DETAIL ========== -->
 <section role="region">
 <ul class="blockList">
@@ -675,6 +738,31 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a id="exploreState(byte,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>exploreState</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;exploreState&#8203;(byte&nbsp;state,
+                                int&nbsp;id)</pre>
+<div class="block">Instructs the fuzzer to attain as many possible values for the absolute value of <code>state</code>
+ as possible.
+
+ Call this function from a fuzz target or a hook to help the fuzzer track partial progress
+ (e.g. by passing the length of a common prefix of two lists that should become equal) or
+ explore different values of state that is not directly related to code coverage (see the
+ MazeFuzzer example).
+
+ <b>Note:</b> This hint only takes effect if the fuzzer is run with the argument
+ <code>-use_value_profile=1</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - a numeric encoding of a state that should be varied by the fuzzer</dd>
+<dd><code>id</code> - a (probabilistically) unique identifier for this particular state hint</dd>
+</dl>
+</li>
+</ul>
 <a id="reportFindingFromHook(java.lang.Throwable)">
 <!--   -->
 </a>
@@ -748,13 +836,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
