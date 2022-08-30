@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":8,"i1":8,"i2":2,"i3":1,"i4":1,"i5":1,"i6":1,"i7":1,"i8":1,"i9":1,"i10":1,"i11":1,"i12":1,"i13":1,"i14":8,"i15":8,"i16":8,"i17":8,"i18":4,"i19":2,"i20":32,"i21":32};
+var data = {"i0":2,"i1":8,"i2":8,"i3":2,"i4":1,"i5":1,"i6":1,"i7":1,"i8":1,"i9":1,"i10":1,"i11":1,"i12":1,"i13":1,"i14":1,"i15":8,"i16":8,"i17":8,"i18":8,"i19":4,"i20":2,"i21":32,"i22":32,"i23":2,"i24":2};
 var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"],4:["t3","Enum Summary"],8:["t4","Exception Summary"],32:["t6","Annotation Types Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -50,7 +50,8 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="com/code_intelligence/jazzer/api/package-summary.html">Package</a></li>
+<li><a href="overview-summary.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li>Use</li>
 <li><a href="overview-tree.html">Tree</a></li>
@@ -114,120 +115,139 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><a href="com/code_intelligence/jazzer/api/Autofuzz.html" title="class in com.code_intelligence.jazzer.api">Autofuzz</a></td>
+<th class="colLast" scope="row">
+<div class="block">Static helper functions that allow Jazzer fuzz targets to use Autofuzz.</div>
+</th>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api">AutofuzzConstructionException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Only used internally.</div>
 </th>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/AutofuzzInvocationException.html" title="class in com.code_intelligence.jazzer.api">AutofuzzInvocationException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Only used internally.</div>
 </th>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/CannedFuzzedDataProvider.html" title="class in com.code_intelligence.jazzer.api">CannedFuzzedDataProvider</a></td>
 <th class="colLast" scope="row">
 <div class="block">Replays recorded FuzzedDataProvider invocations that were executed while fuzzing.</div>
 </th>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Consumer1.html" title="interface in com.code_intelligence.jazzer.api">Consumer1</a>&lt;<a href="com/code_intelligence/jazzer/api/Consumer1.html" title="type parameter in Consumer1">T1</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Consumer2.html" title="interface in com.code_intelligence.jazzer.api">Consumer2</a>&lt;<a href="com/code_intelligence/jazzer/api/Consumer2.html" title="type parameter in Consumer2">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer2.html" title="type parameter in Consumer2">T2</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Consumer3.html" title="interface in com.code_intelligence.jazzer.api">Consumer3</a>&lt;<a href="com/code_intelligence/jazzer/api/Consumer3.html" title="type parameter in Consumer3">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer3.html" title="type parameter in Consumer3">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer3.html" title="type parameter in Consumer3">T3</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Consumer4.html" title="interface in com.code_intelligence.jazzer.api">Consumer4</a>&lt;<a href="com/code_intelligence/jazzer/api/Consumer4.html" title="type parameter in Consumer4">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer4.html" title="type parameter in Consumer4">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer4.html" title="type parameter in Consumer4">T3</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer4.html" title="type parameter in Consumer4">T4</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Consumer5.html" title="interface in com.code_intelligence.jazzer.api">Consumer5</a>&lt;<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="type parameter in Consumer5">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="type parameter in Consumer5">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="type parameter in Consumer5">T3</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="type parameter in Consumer5">T4</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Consumer5.html" title="type parameter in Consumer5">T5</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Function1.html" title="interface in com.code_intelligence.jazzer.api">Function1</a>&lt;<a href="com/code_intelligence/jazzer/api/Function1.html" title="type parameter in Function1">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function1.html" title="type parameter in Function1">R</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Function2.html" title="interface in com.code_intelligence.jazzer.api">Function2</a>&lt;<a href="com/code_intelligence/jazzer/api/Function2.html" title="type parameter in Function2">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function2.html" title="type parameter in Function2">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function2.html" title="type parameter in Function2">R</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Function3.html" title="interface in com.code_intelligence.jazzer.api">Function3</a>&lt;<a href="com/code_intelligence/jazzer/api/Function3.html" title="type parameter in Function3">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function3.html" title="type parameter in Function3">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function3.html" title="type parameter in Function3">T3</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function3.html" title="type parameter in Function3">R</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Function4.html" title="interface in com.code_intelligence.jazzer.api">Function4</a>&lt;<a href="com/code_intelligence/jazzer/api/Function4.html" title="type parameter in Function4">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function4.html" title="type parameter in Function4">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function4.html" title="type parameter in Function4">T3</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function4.html" title="type parameter in Function4">T4</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function4.html" title="type parameter in Function4">R</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Function5.html" title="interface in com.code_intelligence.jazzer.api">Function5</a>&lt;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">T1</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">T2</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">T3</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">T4</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">T5</a>,&#8203;<a href="com/code_intelligence/jazzer/api/Function5.html" title="type parameter in Function5">R</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api">FuzzedDataProvider</a></td>
 <th class="colLast" scope="row">
 <div class="block">A convenience wrapper turning the raw fuzzer input bytes into Java primitive types.</div>
 </th>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/FuzzerSecurityIssueCritical.html" title="class in com.code_intelligence.jazzer.api">FuzzerSecurityIssueCritical</a></td>
 <th class="colLast" scope="row">
 <div class="block">Thrown to indicate that a fuzz target has detected a critical severity security issue rather than
  a normal bug.</div>
 </th>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/FuzzerSecurityIssueHigh.html" title="class in com.code_intelligence.jazzer.api">FuzzerSecurityIssueHigh</a></td>
 <th class="colLast" scope="row">
 <div class="block">Thrown to indicate that a fuzz target has detected a high severity security issue rather than a
  normal bug.</div>
 </th>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/FuzzerSecurityIssueLow.html" title="class in com.code_intelligence.jazzer.api">FuzzerSecurityIssueLow</a></td>
 <th class="colLast" scope="row">
 <div class="block">Thrown to indicate that a fuzz target has detected a low severity security issue rather than a
  normal bug.</div>
 </th>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/FuzzerSecurityIssueMedium.html" title="class in com.code_intelligence.jazzer.api">FuzzerSecurityIssueMedium</a></td>
 <th class="colLast" scope="row">
 <div class="block">Thrown to indicate that a fuzz target has detected a medium severity security issue rather than a
  normal bug.</div>
 </th>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/HookType.html" title="enum in com.code_intelligence.jazzer.api">HookType</a></td>
 <th class="colLast" scope="row">
 <div class="block">The type of a <a href="com/code_intelligence/jazzer/api/MethodHook.html" title="annotation in com.code_intelligence.jazzer.api"><code>MethodHook</code></a>.</div>
 </th>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/Jazzer.html" title="class in com.code_intelligence.jazzer.api">Jazzer</a></td>
 <th class="colLast" scope="row">
-<div class="block">Helper class with static methods that interact with Jazzer at runtime.</div>
+<div class="block">Static helper methods that hooks can use to provide feedback to the fuzzer.</div>
 </th>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/MethodHook.html" title="annotation in com.code_intelligence.jazzer.api">MethodHook</a></td>
 <th class="colLast" scope="row">
 <div class="block">Registers the annotated method as a hook that should run before, instead or
  after the method specified by the annotation parameters.</div>
 </th>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><a href="com/code_intelligence/jazzer/api/MethodHooks.html" title="annotation in com.code_intelligence.jazzer.api">MethodHooks</a></td>
 <th class="colLast" scope="row">
 <div class="block">Internal helper allowing to apply multiple <a href="com/code_intelligence/jazzer/api/MethodHook.html" title="annotation in com.code_intelligence.jazzer.api"><code>MethodHook</code></a> annotations to the same method.</div>
+</th>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><a href="jaz/Ter.html" title="class in jaz">Ter</a></td>
+<th class="colLast" scope="row">
+<div class="block">A safe to use companion of <a href="jaz/Zer.html" title="class in jaz"><code>Zer</code></a> that is used to produce serializable instances of it
+ with only light patching.</div>
+</th>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><a href="jaz/Zer.html" title="class in jaz">Zer</a></td>
+<th class="colLast" scope="row">
+<div class="block">A honeypot class that reports a finding on initialization.</div>
 </th>
 </tr>
 </table>
@@ -246,7 +266,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="com/code_intelligence/jazzer/api/package-summary.html">Package</a></li>
+<li><a href="overview-summary.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li>Use</li>
 <li><a href="overview-tree.html">Tree</a></li>
