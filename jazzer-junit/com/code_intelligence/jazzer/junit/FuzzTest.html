@@ -121,10 +121,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Target.html?is-external=true" title="class or interface in java.lang.annotation" class="externalLink">@Target</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/ElementType.html?is-external=true#METHOD" title="class or interface in java.lang.annotation" class="externalLink">METHOD</a>)
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Retention.html?is-external=true" title="class or interface in java.lang.annotation" class="externalLink">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/RetentionPolicy.html?is-external=true#RUNTIME" title="class or interface in java.lang.annotation" class="externalLink">RUNTIME</a>)
-@ArgumentsSource(com.code_intelligence.jazzer.junit.RegressionTestArgumentProvider.class)
-@ExtendWith(com.code_intelligence.jazzer.junit.RegressionTestExtensions.class)
-@ParameterizedTest(name="{0}")
-@Tag("jazzer")
+<a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html?is-external=true" title="class or interface in org.junit.jupiter.params.provider" class="externalLink">@ArgumentsSource</a>(com.code_intelligence.jazzer.junit.RegressionTestArgumentProvider.class)
+<a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtendWith.html?is-external=true" title="class or interface in org.junit.jupiter.api.extension" class="externalLink">@ExtendWith</a>(com.code_intelligence.jazzer.junit.RegressionTestExtensions.class)
+<a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html?is-external=true" title="class or interface in org.junit.jupiter.params" class="externalLink">@ParameterizedTest</a>(<a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html?is-external=true#name()" title="class or interface in org.junit.jupiter.params" class="externalLink">name</a>="{0}")
+<a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Tag.html?is-external=true" title="class or interface in org.junit.jupiter.api" class="externalLink">@Tag</a>("jazzer")
 public @interface <span class="memberNameLabel">FuzzTest</span></pre>
 <div class="block">A parameterized test with parameters generated automatically by the Java fuzzer <a href="https://github.com/CodeIntelligenceTesting/jazzer">Jazzer</a>.
 
@@ -172,7 +172,7 @@ public @interface <span class="memberNameLabel">FuzzTest</span></pre>
  will be skipped.
 
  <h3>Regression testing</h3>
- <p>By default, a fuzz test is executed as a regular JUnit <code>ParameterizedTest</code> running on a
+ <p>By default, a fuzz test is executed as a regular JUnit <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html?is-external=true" title="class or interface in org.junit.jupiter.params" class="externalLink"><code>ParameterizedTest</code></a> running on a
  fixed set of inputs. It can be run together with regular unit tests and used to verify that past
  findings remain fixed. In IDEs with JUnit 5 integration, it can also be used to conveniently
  debug individual findings.
