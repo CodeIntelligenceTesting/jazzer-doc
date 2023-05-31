@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.code_intelligence.jazzer.junit","l":"FuzzTest"},{"p":"com.code_intelligence.jazzer","l":"Jazzer"},{"p":"com.code_intelligence.jazzer.junit","l":"JazzerTestEngine"}]
+typeSearchIndex = [{"p":"com.code_intelligence.jazzer.junit","l":"AgentConfiguringArgumentsProvider"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.code_intelligence.jazzer.junit","l":"FuzzTest"},{"p":"com.code_intelligence.jazzer","l":"Jazzer"}];updateSearchResults();

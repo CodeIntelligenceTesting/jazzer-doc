@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.code_intelligence.jazzer"},{"l":"com.code_intelligence.jazzer.junit"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.code_intelligence.jazzer"},{"l":"com.code_intelligence.jazzer.junit"}];updateSearchResults();
