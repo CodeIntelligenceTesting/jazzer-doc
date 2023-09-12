@@ -50,14 +50,23 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#accept(com.code_intelligence.jazzer.junit.FuzzTest)" class="member-name-link">accept(FuzzTest)</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#afterLastExecution()" class="member-name-link">afterLastExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" class="type-name-link" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a> - Class in <a href="com/code_intelligence/jazzer/junit/package-summary.html">com.code_intelligence.jazzer.junit</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#%3Cinit%3E()" class="member-name-link">AgentConfiguringArgumentsProvider()</a> - Constructor for class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 class="title" id="I:B">B</h2>
+<dl class="index">
+<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#beforeEachExecution()" class="member-name-link">beforeEachExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#beforeFirstExecution()" class="member-name-link">beforeFirstExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
@@ -82,6 +91,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/code_intelligence/jazzer/Jazzer.html#%3Cinit%3E()" class="member-name-link">Jazzer()</a> - Constructor for class com.code_intelligence.jazzer.<a href="com/code_intelligence/jazzer/Jazzer.html" title="class in com.code_intelligence.jazzer">Jazzer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" class="type-name-link" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a> - Class in <a href="com/code_intelligence/jazzer/junit/package-summary.html">com.code_intelligence.jazzer.junit</a></dt>
+<dd>
+<div class="block">Adapts JUnit BeforeEach and AfterEach callbacks to <code>FuzzTargetRunner</code> lifecycle hooks.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
@@ -92,13 +105,18 @@ loadScripts(document, 'script');</script>
 <div class="block">A duration string such as "1h 2m 30s" indicating for how long the fuzz test should be executed
  during fuzzing.</div>
 </dd>
+<dt><a href="com/code_intelligence/jazzer/junit/FuzzTest.html#maxExecutions()" class="member-name-link">maxExecutions()</a> - Element in annotation interface com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/FuzzTest.html" title="annotation interface in com.code_intelligence.jazzer.junit">FuzzTest</a></dt>
+<dd>
+<div class="block">If set to a positive number, the fuzz test function will be executed at most this many times
+ during fuzzing.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
 <dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ExtensionContext)</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
 <dd>&nbsp;</dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
 </div>
 </div>
 </body>
