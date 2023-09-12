@@ -350,6 +350,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeBooleans</h3>
 <div class="member-signature"><span class="return-type">boolean[]</span>&nbsp;<span class="element-name">consumeBooleans</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes a <code>boolean</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -391,6 +392,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeBytes</h3>
 <div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="element-name">consumeBytes</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes a <code>byte</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -406,6 +408,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeRemainingAsBytes</h3>
 <div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="element-name">consumeRemainingAsBytes</span>()</div>
 <div class="block">Consumes the remaining fuzzer input as a <code>byte</code> array.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">
@@ -445,6 +448,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeShorts</h3>
 <div class="member-signature"><span class="return-type">short[]</span>&nbsp;<span class="element-name">consumeShorts</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes a <code>short</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -486,6 +490,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeInts</h3>
 <div class="member-signature"><span class="return-type">int[]</span>&nbsp;<span class="element-name">consumeInts</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes an <code>int</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -527,6 +532,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeLongs</h3>
 <div class="member-signature"><span class="return-type">long[]</span>&nbsp;<span class="element-name">consumeLongs</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes a <code>long</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -661,6 +667,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeString</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeString</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> from the fuzzer input.
+
  <p>The returned string may be of any length between 0 and <code>maxLength</code>, even if there is
  more fuzzer input available.</div>
 <dl class="notes">
@@ -676,6 +683,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeRemainingAsString</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeRemainingAsString</span>()</div>
 <div class="block">Consumes the remaining fuzzer input as a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">
@@ -689,6 +697,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeAsciiString</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeAsciiString</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block">Consumes an ASCII-only <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> from the fuzzer input.
+
  <p>The returned string may be of any length between 0 and <code>maxLength</code>, even if there is
  more fuzzer input available.</div>
 <dl class="notes">
@@ -696,7 +705,7 @@ loadScripts(document, 'script');</script>
 <dd><code>maxLength</code> - the maximum length of the string</dd>
 <dt>Returns:</dt>
 <dd>a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> of length between 0 and <code>maxLength</code> (inclusive) that contains
- only ASCII characters</dd>
+     only ASCII characters</dd>
 </dl>
 </section>
 </li>
@@ -705,6 +714,7 @@ loadScripts(document, 'script');</script>
 <h3>consumeRemainingAsAsciiString</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeRemainingAsAsciiString</span>()</div>
 <div class="block">Consumes the remaining fuzzer input as an ASCII-only <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">
@@ -729,6 +739,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;T&gt;&nbsp;collection)</span></div>
 <div class="block">Picks an element from <code>collection</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
@@ -745,6 +756,7 @@ loadScripts(document, 'script');</script>
 <h3 id="pickValue(java.lang.Object[])">pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(T[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
@@ -761,6 +773,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(boolean[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -775,6 +788,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(byte[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -789,6 +803,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">short</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(short[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -803,6 +818,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(int[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -817,6 +833,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(long[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -831,6 +848,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(double[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -845,6 +863,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(float[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -859,6 +878,7 @@ loadScripts(document, 'script');</script>
 <h3>pickValue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">pickValue</span><wbr><span class="parameters">(char[]&nbsp;array)</span></div>
 <div class="block">Picks an element from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -874,6 +894,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;</span>&nbsp;<span class="element-name">pickValues</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;T&gt;&nbsp;collection,
  int&nbsp;numOfElements)</span></div>
 <div class="block">Picks <code>numOfElements</code> elements from <code>collection</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
@@ -893,6 +914,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;</span>&nbsp;<span class="element-name">pickValues</span><wbr><span class="parameters">(T[]&nbsp;array,
  int&nbsp;numOfElements)</span></div>
 <div class="block">Picks <code>numOfElements</code> elements from <code>array</code> based on the fuzzer input.
+
  <p><b>Note:</b> The distribution of picks is not perfectly uniform.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>

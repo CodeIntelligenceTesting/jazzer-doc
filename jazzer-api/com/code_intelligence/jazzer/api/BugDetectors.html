@@ -132,16 +132,16 @@ loadScripts(document, 'script');</script>
  <p>By default, all attempted network connections are considered unexpected and result in a
  finding being reported.
 
- <p>By wrapping the call into a try-with-resources statement, network connection permissions
- can be configured to apply to individual parts of the fuzz test only:
+ <p>By wrapping the call into a try-with-resources statement, network connection permissions can
+ be configured to apply to individual parts of the fuzz test only:
 
  <pre><code>
-   Image image = parseImage(bytes);
-   Response response;
-   try (SilentCloseable unused = BugDetectors.allowNetworkConnections()) {
-     response = uploadImage(image);
-   }
-   handleResponse(response);
+ Image image = parseImage(bytes);
+ Response response;
+ try (SilentCloseable unused = BugDetectors.allowNetworkConnections()) {
+   response = uploadImage(image);
+ }
+ handleResponse(response);
  </code></pre></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -158,22 +158,22 @@ loadScripts(document, 'script');</script>
  <p>By default, all attempted network connections are considered unexpected and result in a
  finding being reported.
 
- <p>By wrapping the call into a try-with-resources statement, network connection permissions
- can be configured to apply to individual parts of the fuzz test only:
+ <p>By wrapping the call into a try-with-resources statement, network connection permissions can
+ be configured to apply to individual parts of the fuzz test only:
 
  <pre><code>
-   Image image = parseImage(bytes);
-   Response response;
-   try (SilentCloseable unused = BugDetectors.allowNetworkConnections(
-       (host, port) -&gt; host.equals("example.org"))) {
-     response = uploadImage(image, "example.org");
-   }
-   handleResponse(response);
+ Image image = parseImage(bytes);
+ Response response;
+ try (SilentCloseable unused = BugDetectors.allowNetworkConnections(
+     (host, port) -&gt; host.equals("example.org"))) {
+   response = uploadImage(image, "example.org");
+ }
+ handleResponse(response);
  </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>connectionPermitted</code> - a predicate that evaluate to <code>true</code> if network connections to
-                            the provided combination of host and port are permitted</dd>
+     the provided combination of host and port are permitted</dd>
 <dt>Returns:</dt>
 <dd>a <a href="SilentCloseable.html" title="interface in com.code_intelligence.jazzer.api"><code>SilentCloseable</code></a> that restores the previously set predicate when closed</dd>
 </dl>

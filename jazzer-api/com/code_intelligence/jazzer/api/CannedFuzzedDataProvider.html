@@ -83,8 +83,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">CannedFuzzedDataProvider</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api">FuzzedDataProvider</a></span></div>
-<div class="block">Replays recorded FuzzedDataProvider invocations that were executed while fuzzing.
- Note: This class is only meant to be used by Jazzer's generated reproducers.</div>
+<div class="block">Replays recorded FuzzedDataProvider invocations that were executed while fuzzing. Note: This
+ class is only meant to be used by Jazzer's generated reproducers.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -337,6 +337,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean[]</span>&nbsp;<span class="element-name">consumeBooleans</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeBooleans(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes a <code>boolean</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -419,6 +420,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">short[]</span>&nbsp;<span class="element-name">consumeShorts</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeShorts(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes a <code>short</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -469,6 +471,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">consumeInts</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeInts(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes an <code>int</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -519,6 +522,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long[]</span>&nbsp;<span class="element-name">consumeLongs</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeLongs(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes a <code>long</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -693,6 +697,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeAsciiString</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeAsciiString(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes an ASCII-only <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> from the fuzzer input.
+
  <p>The returned string may be of any length between 0 and <code>maxLength</code>, even if there is
  more fuzzer input available.</div>
 <dl class="notes">
@@ -702,7 +707,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <dd><code>maxLength</code> - the maximum length of the string</dd>
 <dt>Returns:</dt>
 <dd>a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> of length between 0 and <code>maxLength</code> (inclusive) that contains
- only ASCII characters</dd>
+     only ASCII characters</dd>
 </dl>
 </section>
 </li>
@@ -712,6 +717,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeString</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeString(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> from the fuzzer input.
+
  <p>The returned string may be of any length between 0 and <code>maxLength</code>, even if there is
  more fuzzer input available.</div>
 <dl class="notes">
@@ -730,6 +736,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeRemainingAsAsciiString</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeRemainingAsAsciiString()">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes the remaining fuzzer input as an ASCII-only <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">
@@ -746,6 +753,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">consumeRemainingAsString</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeRemainingAsString()">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes the remaining fuzzer input as a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">
@@ -762,6 +770,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">consumeBytes</span><wbr><span class="parameters">(int&nbsp;maxLength)</span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeBytes(int)">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes a <code>byte</code> array from the fuzzer input.
+
  <p>The array will usually have length <code>length</code>, but might be shorter if the fuzzer input
  is not sufficiently long.</div>
 <dl class="notes">
@@ -780,6 +789,7 @@ implements <a href="FuzzedDataProvider.html" title="interface in com.code_intell
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">consumeRemainingAsBytes</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="FuzzedDataProvider.html#consumeRemainingAsBytes()">FuzzedDataProvider</a></code></span></div>
 <div class="block">Consumes the remaining fuzzer input as a <code>byte</code> array.
+
  <p><b>Note:</b> After calling this method, further calls to methods of this interface will
  return fixed values only.</div>
 <dl class="notes">

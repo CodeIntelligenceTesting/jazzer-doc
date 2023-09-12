@@ -72,105 +72,97 @@ loadScripts(document, 'script');</script>
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="MethodHooks.html" title="annotation interface in com.code_intelligence.jazzer.api">MethodHooks.class</a>)
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">MethodHook</span></div>
-<div class="block">Registers the annotated method as a hook that should run before, instead or
- after the method specified by the annotation parameters.
- <p>
- Depending on <a href="#type()"><code>type()</code></a> this method will be called after, instead or
- before every call to the target method and has
- access to its parameters and return value. The target method is specified by
- <a href="#targetClassName()"><code>targetClassName()</code></a> and <a href="#targetMethod()"><code>targetMethod()</code></a>. In case of an
- overloaded method, <a href="#targetMethodDescriptor()"><code>targetMethodDescriptor()</code></a> can be used to restrict
- the application of the hook to a particular overload.
- <p>
- The signature of the annotated method must be as follows (this does not
- restrict the method name and parameter names, which are arbitrary),
- depending on the value of <a href="#type()"><code>type()</code></a>:
+<div class="block">Registers the annotated method as a hook that should run before, instead or after the method
+ specified by the annotation parameters.
+
+ <p>Depending on <a href="#type()"><code>type()</code></a> this method will be called after, instead or before every call to
+ the target method and has access to its parameters and return value. The target method is
+ specified by <a href="#targetClassName()"><code>targetClassName()</code></a> and <a href="#targetMethod()"><code>targetMethod()</code></a>. In case of an overloaded
+ method, <a href="#targetMethodDescriptor()"><code>targetMethodDescriptor()</code></a> can be used to restrict the application of the hook to
+ a particular overload.
+
+ <p>The signature of the annotated method must be as follows (this does not restrict the method
+ name and parameter names, which are arbitrary), depending on the value of <a href="#type()"><code>type()</code></a>:
 
  <dl>
- <dt><span class="strong"><a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a></span>
- <dd>
- <pre><code>
+   <dt><span class="strong"><a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a></span>
+   <dd>
+       <pre><code>
  public static void hook(MethodHandle method, Object thisObject, Object[] arguments, int hookId)
  </code></pre>
- Arguments:
- <p><ul>
- <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the
- original method. The original method can be invoked via
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This
- requires passing <code>thisObject</code> as the first argument if the method is
- not static. This argument can be <code>null</code>.
- <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit
- <code>this</code> argument to the original method. If the original method is
- static, this argument will be <code>null</code>.
- <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments
- passed to the original method. Primitive types (e.g. <code>boolean</code>) will be
- wrapped into their corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
- <li><code>hookId</code>: A random <code>int</code> identifying the particular call
- site.This can be used to derive additional coverage information.
- </ul>
-
- <dt><span class="strong"><a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a></span>
- <dd>
- <pre><code>
+       Arguments:
+       <p>
+       <ul>
+         <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the original
+             method. The original method can be invoked via <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This requires passing
+             <code>thisObject</code> as the first argument if the method is not static. This argument
+             can be <code>null</code>.
+         <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit <code>this</code> argument
+             to the original method. If the original method is static, this argument will be
+             <code>null</code>.
+         <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments passed to the
+             original method. Primitive types (e.g. <code>boolean</code>) will be wrapped into their
+             corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
+         <li><code>hookId</code>: A random <code>int</code> identifying the particular call site.This can be
+             used to derive additional coverage information.
+       </ul>
+   <dt><span class="strong"><a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a></span>
+   <dd>
+       <pre><code>
  public static Object hook(MethodHandle method, Object thisObject, Object[] arguments, int hookId)
  </code></pre>
- The return type may alternatively be taken to be the exact return type of
- target method or a wrapper type thereof. The returned object will be casted
- and unwrapped automatically.
- <p>
- Arguments:
- <p><ul>
- <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the
- original method. The original method can be invoked via
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This
- requires passing <code>thisObject</code> as the first argument if the method is
- not static. This argument can be <code>null</code>.
- <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit
- <code>this</code> argument to the original method. If the original method is
- static, this argument will be <code>null</code>.
- <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments
- passed to the original method. Primitive types (e.g. <code>boolean</code>) will be
- wrapped into their corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
- <li><code>hookId</code>: A random <code>int</code> identifying the particular call
- site.This can be used to derive additional coverage information.
- </ul><p>
- <p>
- Return value: the value that should take the role of the value the target
- method would have returned
- <p>
- <dt><span class="strong"><a href="HookType.html#AFTER"><code>HookType.AFTER</code></a></span>
- <dd>
- <pre><code>
+       The return type may alternatively be taken to be the exact return type of target method or
+       a wrapper type thereof. The returned object will be casted and unwrapped automatically.
+       <p>Arguments:
+       <p>
+       <ul>
+         <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the original
+             method. The original method can be invoked via <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This requires passing
+             <code>thisObject</code> as the first argument if the method is not static. This argument
+             can be <code>null</code>.
+         <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit <code>this</code> argument
+             to the original method. If the original method is static, this argument will be
+             <code>null</code>.
+         <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments passed to the
+             original method. Primitive types (e.g. <code>boolean</code>) will be wrapped into their
+             corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
+         <li><code>hookId</code>: A random <code>int</code> identifying the particular call site.This can be
+             used to derive additional coverage information.
+       </ul>
+       <p>
+       <p>Return value: the value that should take the role of the value the target method would
+       have returned
+       <p>
+   <dt><span class="strong"><a href="HookType.html#AFTER"><code>HookType.AFTER</code></a></span>
+   <dd>
+       <pre><code>
  public static void hook(MethodHandle method, Object thisObject, Object[] arguments, int hookId,
  Object returnValue)
  </code></pre>
- Arguments:
- <p><ul>
- <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the
- original method. The original method can be invoked via
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This
- requires passing <code>thisObject</code> as the first argument if the method is
- not static. This argument can be <code>null</code>.
- <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit
- <code>this</code> argument to the original method. If the original method is
- static, this argument will be <code>null</code>.
- <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments
- passed to the original method. Primitive types (e.g. <code>boolean</code>) will be
- wrapped into their corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
- <li><code>hookId</code>: A random <code>int</code> identifying the particular call
- site.This can be used to derive additional coverage information.
- <li><code>returnValue</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the return value of the
- invocation of the original method. Primitive types (e.g. <code>boolean</code>)
- will be wrapped into their corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
- If the original method has return type <code>void</code>, this value will be
- <code>null</code>.
- <p>
- Multiple <a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a> and <a href="HookType.html#AFTER"><code>HookType.AFTER</code></a> hooks are
- allowed to reference the same target method. Exclusively one
- <a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a> hook may reference a target method, no other types
- allowed. Attention must be paid to not guide the Fuzzer in different
- directions via <a href="Jazzer.html" title="class in com.code_intelligence.jazzer.api"><code>Jazzer</code></a>'s <code>guideTowardsXY</code> methods in the
- different hooks.</div>
+       Arguments:
+       <p>
+       <ul>
+         <li><code>method</code>: A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> representing the original
+             method. The original method can be invoked via <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodHandle.html#invokeWithArguments(java.lang.Object...)" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle.invokeWithArguments(Object...)</code></a>. This requires passing
+             <code>thisObject</code> as the first argument if the method is not static. This argument
+             can be <code>null</code>.
+         <li><code>thisObject</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the implicit <code>this</code> argument
+             to the original method. If the original method is static, this argument will be
+             <code>null</code>.
+         <li><code>arguments</code>: An array of <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>s containing the arguments passed to the
+             original method. Primitive types (e.g. <code>boolean</code>) will be wrapped into their
+             corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>).
+         <li><code>hookId</code>: A random <code>int</code> identifying the particular call site.This can be
+             used to derive additional coverage information.
+         <li><code>returnValue</code>: An <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> containing the return value of the invocation
+             of the original method. Primitive types (e.g. <code>boolean</code>) will be wrapped into
+             their corresponding wrapper type (e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>). If the original method has
+             return type <code>void</code>, this value will be <code>null</code>.
+             <p>Multiple <a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a> and <a href="HookType.html#AFTER"><code>HookType.AFTER</code></a> hooks are allowed to
+             reference the same target method. Exclusively one <a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a> hook may
+             reference a target method, no other types allowed. Attention must be paid to not
+             guide the Fuzzer in different directions via <a href="Jazzer.html" title="class in com.code_intelligence.jazzer.api"><code>Jazzer</code></a>'s <code>guideTowardsXY</code>
+             methods in the different hooks.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -186,8 +178,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#targetClassName()" class="member-name-link">targetClassName</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">The name of the class that contains the method that should be hooked,
- as returned by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#getName()" title="class or interface in java.lang" class="external-link"><code>Class.getName()</code></a>.</div>
+<div class="block">The name of the class that contains the method that should be hooked, as returned by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#getName()" title="class or interface in java.lang" class="external-link"><code>Class.getName()</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#targetMethod()" class="member-name-link">targetMethod</a></code></div>
@@ -238,17 +229,16 @@ loadScripts(document, 'script');</script>
 <h3>type</h3>
 <div class="member-signature"><span class="return-type"><a href="HookType.html" title="enum class in com.code_intelligence.jazzer.api">HookType</a></span>&nbsp;<span class="element-name">type</span></div>
 <div class="block">The time at which the annotated method should be called.
- <p>
- If this is <a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a>, the annotated method will be called
- before the target method and has access to its arguments.
- <p>
- If this is <a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a>, the annotated method will be called
- instead of the target method. It has access to its arguments and can
- return a value that will replace the target method's return value.
- <p>
- If this is <a href="HookType.html#AFTER"><code>HookType.AFTER</code></a>, the annotated method will be called
- after the target method and has access to its arguments and return
- value.</div>
+
+ <p>If this is <a href="HookType.html#BEFORE"><code>HookType.BEFORE</code></a>, the annotated method will be called before the target
+ method and has access to its arguments.
+
+ <p>If this is <a href="HookType.html#REPLACE"><code>HookType.REPLACE</code></a>, the annotated method will be called instead of the
+ target method. It has access to its arguments and can return a value that will replace the
+ target method's return value.
+
+ <p>If this is <a href="HookType.html#AFTER"><code>HookType.AFTER</code></a>, the annotated method will be called after the target
+ method and has access to its arguments and return value.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>when the hook should be called</dd>
@@ -259,19 +249,22 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="targetClassName()">
 <h3>targetClassName</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">targetClassName</span></div>
-<div class="block">The name of the class that contains the method that should be hooked,
- as returned by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#getName()" title="class or interface in java.lang" class="external-link"><code>Class.getName()</code></a>.
+<div class="block">The name of the class that contains the method that should be hooked, as returned by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#getName()" title="class or interface in java.lang" class="external-link"><code>Class.getName()</code></a>.
+
+ <p>If an interface or abstract class is specified, also calls to all implementations and
+ subclasses available on the classpath during startup are hooked, respectively. Interfaces and
+ subclasses are not taken into account for concrete classes.
+
+ <p>Examples:
+
  <p>
- If an interface or abstract class is specified, also calls to all
- implementations and subclasses available on the classpath during startup
- are hooked, respectively. Interfaces and subclasses are not taken into
- account for concrete classes.
- <p>
- Examples:
- <p><ul>
- <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>: <code>"java.lang.String"</code>
- <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/FileSystem.html" title="class or interface in java.nio.file" class="external-link"><code>FileSystem</code></a>: <code>"java.nio.file.FileSystem"</code>
- </ul><p></div>
+
+ <ul>
+   <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>: <code>"java.lang.String"</code>
+   <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/FileSystem.html" title="class or interface in java.nio.file" class="external-link"><code>FileSystem</code></a>: <code>"java.nio.file.FileSystem"</code>
+ </ul>
+
+ <p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the name of the class containing the method to be hooked</dd>
@@ -282,14 +275,18 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="targetMethod()">
 <h3>targetMethod</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">targetMethod</span></div>
-<div class="block">The name of the method to be hooked. Use <code>"&lt;init&gt;"</code> for
- constructors.
+<div class="block">The name of the method to be hooked. Use <code>"&lt;init&gt;"</code> for constructors.
+
+ <p>Examples:
+
  <p>
- Examples:
- <p><ul>
- <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>String.equals(Object)</code></a>: <code>"equals"</code>
- <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#%3Cinit%3E()" title="class or interface in java.lang" class="external-link"><code>String()</code></a>: <code>"&lt;init&gt;"</code>
- </ul><p></div>
+
+ <ul>
+   <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>String.equals(Object)</code></a>: <code>"equals"</code>
+   <li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#%3Cinit%3E()" title="class or interface in java.lang" class="external-link"><code>String()</code></a>: <code>"&lt;init&gt;"</code>
+ </ul>
+
+ <p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the name of the method to be hooked</dd>
@@ -307,14 +304,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="targetMethodDescriptor()">
 <h3>targetMethodDescriptor</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">targetMethodDescriptor</span></div>
-<div class="block">The descriptor of the method to be hooked. This is only needed if there
- are multiple methods with the same name and not all of them should be
- hooked.
- <p>
- The descriptor of a method is an internal representation of the method's
- signature, which includes the types of its parameters and its return
- value. For more information on descriptors, see the
- <a href=https://docs.oracle.com/javase/specs/jvms/se15/html/jvms-4.html#jvms-4.3.3>JVM
+<div class="block">The descriptor of the method to be hooked. This is only needed if there are multiple methods
+ with the same name and not all of them should be hooked.
+
+ <p>The descriptor of a method is an internal representation of the method's signature, which
+ includes the types of its parameters and its return value. For more information on descriptors,
+ see the <a href=https://docs.oracle.com/javase/specs/jvms/se15/html/jvms-4.html#jvms-4.3.3>JVM
  Specification, Section 4.3.3</a> and <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/MethodType.html#toMethodDescriptorString()" title="class or interface in java.lang.invoke" class="external-link"><code>MethodType.toMethodDescriptorString()</code></a></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -331,10 +326,10 @@ loadScripts(document, 'script');</script>
 <h3>additionalClassesToHook</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">additionalClassesToHook</span></div>
 <div class="block">Array of additional classes to hook.
- <p>
- Hooks are applied on call sites. This means that classes calling the one
- defined in this annotation need to be instrumented to actually execute
- the hook. This property can be used to hook normally ignored classes.</div>
+
+ <p>Hooks are applied on call sites. This means that classes calling the one defined in this
+ annotation need to be instrumented to actually execute the hook. This property can be used to
+ hook normally ignored classes.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>fully qualified class names to hook</dd>

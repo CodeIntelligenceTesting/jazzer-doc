@@ -220,8 +220,8 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Function1.html" title="interface in com.code_intelligence.jazzer.api">Function1</a>&lt;T1,<wbr>R&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -247,8 +247,8 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Function2.html" title="interface in com.code_intelligence.jazzer.api">Function2</a>&lt;T1,<wbr>T2,<wbr>R&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -275,8 +275,8 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Function3.html" title="interface in com.code_intelligence.jazzer.api">Function3</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -304,8 +304,8 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Function4.html" title="interface in com.code_intelligence.jazzer.api">Function4</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>T4,<wbr>R&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -334,8 +334,8 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Function5.html" title="interface in com.code_intelligence.jazzer.api">Function5</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>T4,<wbr>T5,<wbr>R&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -359,15 +359,15 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
  <a href="Consumer1.html" title="interface in com.code_intelligence.jazzer.api">Consumer1</a>&lt;T1&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
 <dd><code>func</code> - a method reference for the function to autofuzz. If there are multiple overloads,
      resolve ambiguities by explicitly casting to <a href="Consumer1.html" title="interface in com.code_intelligence.jazzer.api"><code>Consumer1</code></a> with explicitly specified
- type variable.</dd>
+     type variable.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - any <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by <code>func</code>, or an <a href="AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api"><code>AutofuzzConstructionException</code></a> if autofuzz failed to construct the arguments for the call.
      The <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> is thrown unchecked.</dd>
@@ -382,15 +382,15 @@ T2&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="eleme
  <a href="Consumer2.html" title="interface in com.code_intelligence.jazzer.api">Consumer2</a>&lt;T1,<wbr>T2&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
 <dd><code>func</code> - a method reference for the function to autofuzz. If there are multiple overloads,
      resolve ambiguities by explicitly casting to <a href="Consumer2.html" title="interface in com.code_intelligence.jazzer.api"><code>Consumer2</code></a> with (partially) specified
- type variables.</dd>
+     type variables.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - any <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by <code>func</code>, or an <a href="AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api"><code>AutofuzzConstructionException</code></a> if autofuzz failed to construct the arguments for the call.
      The <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> is thrown unchecked.</dd>
@@ -406,15 +406,15 @@ T3&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="eleme
  <a href="Consumer3.html" title="interface in com.code_intelligence.jazzer.api">Consumer3</a>&lt;T1,<wbr>T2,<wbr>T3&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
 <dd><code>func</code> - a method reference for the function to autofuzz. If there are multiple overloads,
      resolve ambiguities by explicitly casting to <a href="Consumer3.html" title="interface in com.code_intelligence.jazzer.api"><code>Consumer3</code></a> with (partially) specified
- type variables.</dd>
+     type variables.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - any <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by <code>func</code>, or an <a href="AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api"><code>AutofuzzConstructionException</code></a> if autofuzz failed to construct the arguments for the call.
      The <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> is thrown unchecked.</dd>
@@ -431,15 +431,15 @@ T4&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="eleme
  <a href="Consumer4.html" title="interface in com.code_intelligence.jazzer.api">Consumer4</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>T4&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
 <dd><code>func</code> - a method reference for the function to autofuzz. If there are multiple overloads,
      resolve ambiguities by explicitly casting to <a href="Consumer4.html" title="interface in com.code_intelligence.jazzer.api"><code>Consumer4</code></a> with (partially) specified
- type variables.</dd>
+     type variables.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - any <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by <code>func</code>, or an <a href="AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api"><code>AutofuzzConstructionException</code></a> if autofuzz failed to construct the arguments for the call.
      The <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> is thrown unchecked.</dd>
@@ -457,15 +457,15 @@ T5&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="eleme
  <a href="Consumer5.html" title="interface in com.code_intelligence.jazzer.api">Consumer5</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>T4,<wbr>T5&gt;&nbsp;func)</span></div>
 <div class="block">Attempts to invoke <code>func</code> with arguments created automatically from the fuzzer input
  using only public methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to execute <code>func</code> in
  meaningful ways for a number of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
 <dd><code>func</code> - a method reference for the function to autofuzz. If there are multiple overloads,
      resolve ambiguities by explicitly casting to <a href="Consumer5.html" title="interface in com.code_intelligence.jazzer.api"><code>Consumer5</code></a> with (partially) specified
- type variables.</dd>
+     type variables.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - any <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by <code>func</code>, or an <a href="AutofuzzConstructionException.html" title="class in com.code_intelligence.jazzer.api"><code>AutofuzzConstructionException</code></a> if autofuzz failed to construct the arguments for the call.
      The <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> is thrown unchecked.</dd>
@@ -479,9 +479,9 @@ T5&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="eleme
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type)</span></div>
 <div class="block">Attempts to construct an instance of <code>type</code> from the fuzzer input using only public
  methods available on the classpath.
- <p>
- <b>Note:</b> This function is inherently heuristic and may fail to return meaningful values for
- a variety of reasons.</div>
+
+ <p><b>Note:</b> This function is inherently heuristic and may fail to return meaningful values
+ for a variety of reasons.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the <a href="FuzzedDataProvider.html" title="interface in com.code_intelligence.jazzer.api"><code>FuzzedDataProvider</code></a> instance provided to <code>fuzzerTestOneInput</code>.</dd>
