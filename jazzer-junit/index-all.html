@@ -50,25 +50,7 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
-<h2 class="title" id="I:A">A</h2>
-<dl class="index">
-<dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#accept(com.code_intelligence.jazzer.junit.FuzzTest)" class="member-name-link">accept(FuzzTest)</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#afterLastExecution()" class="member-name-link">afterLastExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" class="type-name-link" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a> - Class in <a href="com/code_intelligence/jazzer/junit/package-summary.html">com.code_intelligence.jazzer.junit</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#%3Cinit%3E()" class="member-name-link">AgentConfiguringArgumentsProvider()</a> - Constructor for class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
-<dd>&nbsp;</dd>
-</dl>
-<h2 class="title" id="I:B">B</h2>
-<dl class="index">
-<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#beforeEachExecution()" class="member-name-link">beforeEachExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html#beforeFirstExecution()" class="member-name-link">beforeFirstExecution()</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a></dt>
-<dd>&nbsp;</dd>
-</dl>
+<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:V">V</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
 <dt><a href="com/code_intelligence/jazzer/package-summary.html">com.code_intelligence.jazzer</a> - package com.code_intelligence.jazzer</dt>
@@ -91,9 +73,16 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/code_intelligence/jazzer/Jazzer.html#%3Cinit%3E()" class="member-name-link">Jazzer()</a> - Constructor for class com.code_intelligence.jazzer.<a href="com/code_intelligence/jazzer/Jazzer.html" title="class in com.code_intelligence.jazzer">Jazzer</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/code_intelligence/jazzer/junit/JUnitLifecycleMethodsInvoker.html" class="type-name-link" title="class in com.code_intelligence.jazzer.junit">JUnitLifecycleMethodsInvoker</a> - Class in <a href="com/code_intelligence/jazzer/junit/package-summary.html">com.code_intelligence.jazzer.junit</a></dt>
+</dl>
+<h2 class="title" id="I:L">L</h2>
+<dl class="index">
+<dt><a href="com/code_intelligence/jazzer/junit/FuzzTest.html#lifecycle()" class="member-name-link">lifecycle()</a> - Element in annotation interface com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/FuzzTest.html" title="annotation interface in com.code_intelligence.jazzer.junit">FuzzTest</a></dt>
 <dd>
-<div class="block">Adapts JUnit BeforeEach and AfterEach callbacks to <code>FuzzTargetRunner</code> lifecycle hooks.</div>
+<div class="block">Controls the JUnit lifecycle of fuzz tests during fuzzing.</div>
+</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/Lifecycle.html" class="type-name-link" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a> - Enum Class in <a href="com/code_intelligence/jazzer/junit/package-summary.html">com.code_intelligence.jazzer.junit</a></dt>
+<dd>
+<div class="block">Possible values for the <a href="com/code_intelligence/jazzer/junit/FuzzTest.html#lifecycle()"><code>FuzzTest.lifecycle()</code></a> option.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
@@ -113,10 +102,32 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
-<dt><a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ExtensionContext)</a> - Method in class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/AgentConfiguringArgumentsProvider.html" title="class in com.code_intelligence.jazzer.junit">AgentConfiguringArgumentsProvider</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/Lifecycle.html#PER_EXECUTION" class="member-name-link">PER_EXECUTION</a> - Enum constant in enum class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></dt>
+<dd>
+<div class="block">Fuzz tests with this lifecycle go through the JUnit test method lifecycle once for every test
+ method execution during fuzzing, i.e., per-test lifecycle methods such as <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>BeforeEach</code></a> methods are executed before each individual invocation of the
+ fuzz test method.</div>
+</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/Lifecycle.html#PER_TEST" class="member-name-link">PER_TEST</a> - Enum constant in enum class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></dt>
+<dd>
+<div class="block">Fuzz tests with this lifecycle only go through the JUnit test method lifecycle once during
+ fuzzing, i.e., per-test lifecycle methods such as <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>BeforeEach</code></a>
+ methods are executed once for each fuzz test.</div>
+</dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
+<h2 class="title" id="I:V">V</h2>
+<dl class="index">
+<dt><a href="com/code_intelligence/jazzer/junit/Lifecycle.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/code_intelligence/jazzer/junit/Lifecycle.html#values()" class="member-name-link">values()</a> - Static method in enum class com.code_intelligence.jazzer.junit.<a href="com/code_intelligence/jazzer/junit/Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+</dl>
+<a href="#I:C">C</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:V">V</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
 </div>
 </div>
 </body>

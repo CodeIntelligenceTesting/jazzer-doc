@@ -146,15 +146,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Optional Element</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#maxDuration()" class="member-name-link">maxDuration</a></code></div>
+<div class="col-first even-row-color"><code><a href="Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></code></div>
+<div class="col-second even-row-color"><code><a href="#lifecycle()" class="member-name-link">lifecycle</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Controls the JUnit lifecycle of fuzz tests during fuzzing.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#maxDuration()" class="member-name-link">maxDuration</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">A duration string such as "1h 2m 30s" indicating for how long the fuzz test should be executed
  during fuzzing.</div>
 </div>
-<div class="col-first odd-row-color"><code>long</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxExecutions()" class="member-name-link">maxExecutions</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#maxExecutions()" class="member-name-link">maxExecutions</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">If set to a positive number, the fuzz test function will be executed at most this many times
  during fuzzing.</div>
 </div>
@@ -200,6 +205,20 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Default:</dt>
 <dd>0L</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="lifecycle()">
+<h3>lifecycle</h3>
+<div class="member-signature"><span class="return-type"><a href="Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></span>&nbsp;<span class="element-name">lifecycle</span></div>
+<div class="block">Controls the JUnit lifecycle of fuzz tests during fuzzing.
+
+ <p>During regression testing, fuzz tests always go through the full JUnit lifecycle for every
+ execution regardless of the value of this option.</div>
+<dl class="notes">
+<dt>Default:</dt>
+<dd>PER_TEST</dd>
 </dl>
 </section>
 </li>
