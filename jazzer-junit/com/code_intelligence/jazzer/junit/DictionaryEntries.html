@@ -71,7 +71,12 @@ loadScripts(document, 'script');</script>
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="DictionaryEntriesList.html" title="annotation interface in com.code_intelligence.jazzer.junit">DictionaryEntriesList.class</a>)
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">DictionaryEntries</span></div>
-<div class="block">Defines a reference to a dictionary within the resources directory. These should follow <a href="https://llvm.org/docs/LibFuzzer.html#dictionaries">libfuzzer's dictionary syntax</a>.</div>
+<div class="block">Adds the given strings to the fuzzer's dictionary. This is particularly useful for adding strings
+ that have special meaning in the context of your fuzz test, but are difficult for the fuzzer to
+ discover automatically.
+
+ <p>Typical examples include valid credentials for mock accounts in a web application or a
+ collection of valid HTML tags for an HTML parser.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -85,8 +90,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Required Element</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#tokens()" class="member-name-link">tokens</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-second even-row-color"><code><a href="#value()" class="member-name-link">value</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Individual strings to add to the fuzzer dictionary.</div>
+</div>
 </div>
 </section>
 </li>
@@ -100,9 +107,10 @@ loadScripts(document, 'script');</script>
 <h2>Element Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="tokens()">
-<h3>tokens</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">tokens</span></div>
+<section class="detail" id="value()">
+<h3>value</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">value</span></div>
+<div class="block">Individual strings to add to the fuzzer dictionary.</div>
 </section>
 </li>
 </ul>
