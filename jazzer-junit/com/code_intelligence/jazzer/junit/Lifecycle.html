@@ -109,7 +109,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Fuzz tests with this lifecycle go through the JUnit test method lifecycle once for every test
  method execution during fuzzing, i.e., per-test lifecycle methods such as <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>BeforeEach</code></a> methods are executed before each individual invocation of the
- fuzz test method.</div>
+ fuzz test method and every execution uses its own test class instance.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="#PER_TEST" class="member-name-link">PER_TEST</a></code></div>
 <div class="col-last odd-row-color">
@@ -181,20 +181,24 @@ the order they are declared.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Lifecycle.html" title="enum class in com.code_intelligence.jazzer.junit">Lifecycle</a></span>&nbsp;<span class="element-name">PER_EXECUTION</span></div>
 <div class="block">Fuzz tests with this lifecycle go through the JUnit test method lifecycle once for every test
  method execution during fuzzing, i.e., per-test lifecycle methods such as <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>BeforeEach</code></a> methods are executed before each individual invocation of the
- fuzz test method.
+ fuzz test method and every execution uses its own test class instance.
 
  <p>This mode is usually less efficient than <a href="#PER_TEST"><code>PER_TEST</code></a>, but makes it easier to
  write stateless fuzz tests that interoperate correctly with JUnit extensions used by test
  frameworks.
 
- <p>Only the following lifecycle methods and extensions are currently supported:
+ <p>The following lifecycle methods and extensions are currently supported:
 
  <ul>
    <li><a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html" title="class or interface in org.junit.jupiter.api.extension" class="external-link"><code>BeforeEachCallback</code></a>
+   <li><a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestInstancePostProcessor.html" title="class or interface in org.junit.jupiter.api.extension" class="external-link"><code>TestInstancePostProcessor</code></a>
    <li><a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>BeforeEach</code></a>
    <li><a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="class or interface in org.junit.jupiter.api" class="external-link"><code>AfterEach</code></a>
    <li><a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="class or interface in org.junit.jupiter.api.extension" class="external-link"><code>AfterEachCallback</code></a>
- </ul></div>
+ </ul>
+
+ <p>Note: Lifecycle methods for different test class instances may be invoked concurrently,
+ which can lead to issues if these methods are using global resources (e.g. file locks).</div>
 </section>
 </li>
 </ul>
